@@ -1,0 +1,19 @@
+#pracs 1
+
+from playsound import playsound
+from gtts import gTTS
+text="Sahil Gurnani"
+language="en"
+texttosound=gTTS(text=text,lang=language)
+texttosound.save("Output.mp3")
+playsound("Output.mp3")
+print("Sound Played")
+
+
+import speech_recognition as sr
+file="C:\\Sahil\\whatsweatherlike.wav"
+r=sr.Recognizer()
+with sr.AudioFile(file)as source:
+    speechtotext= r.record(source)
+    text=r.recognize_google(speechtotext)
+    print(text)
